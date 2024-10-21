@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "3d6bdd2e-fa43-4f24-8f98-94efe64ab70e",
+		"name": "API Plants",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20813865"
+	},
+	"item": [
+		{
+			"name": "index",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|dci1X25wKfswgz2676fZOD4CQ0S8XpZVkgVrlspfacd5c966",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/plants",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"plants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "aplication/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|dci1X25wKfswgz2676fZOD4CQ0S8XpZVkgVrlspfacd5c966",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/plants/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"plants",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "store",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|dci1X25wKfswgz2676fZOD4CQ0S8XpZVkgVrlspfacd5c966",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Rosa\",\r\n    \"species\": \"Rosa rubiginosa\",\r\n    \"family\": \"Rosaceae\",\r\n    \"height_cm\": 150,\r\n    \"average_water_needs\": 2.50,\r\n    \"is_exotic\": false,\r\n    \"is_perennial\": true,\r\n    \"flowering_season\": \"Spring\",\r\n    \"germination_date\": \"2023-03-15\",\r\n    \"planted_at\": \"2023-04-01\",\r\n    \"description\": \"A beautiful rose plant with fragrant flowers.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/plants",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"plants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"app1\",\r\n    \"email\":\"lebsack.rupert@example.org\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|dci1X25wKfswgz2676fZOD4CQ0S8XpZVkgVrlspfacd5c966",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"planted_at\": \"2023-07-22\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/plants/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"plants",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "destroy",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|dci1X25wKfswgz2676fZOD4CQ0S8XpZVkgVrlspfacd5c966",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/plants/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"plants",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
