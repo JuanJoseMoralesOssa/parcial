@@ -33,6 +33,8 @@ class UpdatePlantRequest extends FormRequest
             'germination_date' => 'nullable|date',
             'planted_at' => 'nullable|date',
             'description' => 'nullable|string',
+            'category_id' => 'nullable|exists:plant_categories,id',
+
         ];
     }
 }

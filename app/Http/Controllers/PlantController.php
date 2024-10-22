@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePlantRequest;
 use App\Http\Requests\UpdatePlantRequest;
 use App\Models\Plant;
+use App\Models\PlantCategory;
 use Illuminate\Http\Response;
 
 class PlantController extends Controller
@@ -34,6 +35,7 @@ class PlantController extends Controller
         $plant->germination_date = $request->germination_date;
         $plant->planted_at = $request->planted_at;
         $plant->description = $request->description;
+        $plant->category_id = $request->category_id;
         $plant->save();
         return response()->json([
             'message' => 'Plant created successfully',
@@ -46,6 +48,9 @@ class PlantController extends Controller
      */
     public function show(Plant $plant)
     {
+        // $plant->category =
+        //     PlantCategory::find($plant->category_id);
+        $plant = Plant::with(['category', 'category.plants'])->find($plant->id);
         return response()->json(['plant' => $plant], Response::HTTP_OK);
     }
 
@@ -65,6 +70,7 @@ class PlantController extends Controller
         $plant->germination_date = $request->germination_date ?? $plant->germination_date;
         $plant->planted_at = $request->planted_at ?? $plant->planted_at;
         $plant->description = $request->description ?? $plant->description;
+        $plant->category_id = $request->category_id ?? $plant->category_id;
         $plant->save();
         return response()->json(['plant' => $plant], Response::HTTP_OK);
     }

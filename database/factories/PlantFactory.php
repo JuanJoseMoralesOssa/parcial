@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Plant;
+use App\Models\PlantCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -31,6 +32,7 @@ class PlantFactory extends Factory
             'germination_date' => $this->faker->date(),
             'planted_at' => $this->faker->optional()->date(),
             'description' => $this->faker->text(),
+            'category_id' => PlantCategory::factory(),
         ];
     }
 }
